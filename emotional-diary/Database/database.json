@@ -1,0 +1,61 @@
+{
+	"entries": [
+		{
+			"id": 0,
+			"date": "",
+			"emotion": "HAPPY",
+			"text": ""
+		},
+		{
+			"id": 1,
+			"date": "",
+			"emotion": "HAPPY",
+			"text": ""
+		},
+		{
+			"id": 2,
+			"date": "",
+			"emotion": "HAPPY",
+			"text": ""
+		},
+		{
+			"id": 3,
+			"date": "",
+			"emotion": "HAPPY",
+			"text": ""
+		},
+		{
+			"id": 4,
+			"date": "",
+			"emotion": "HAPPY",
+			"text": ""
+		}
+	],
+	"notes": [
+		{
+			"id": 0,
+			"dateTime": "",
+			"text": ""
+		},
+		{
+			"id": 1,
+			"dateTime": "",
+			"text": ""
+		},
+		{
+			"id": 2,
+			"dateTime": "",
+			"text": ""
+		},
+		{
+			"id": 3,
+			"dateTime": "",
+			"text": ""
+		},
+		{
+			"id": 4,
+			"dateTime": "",
+			"text": ""
+		}
+	]
+}
