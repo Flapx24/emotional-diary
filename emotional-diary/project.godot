@@ -13,3 +13,7 @@ config_version=5
 config/name="emotional-diary"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Database="*res://Database/database.gd"
