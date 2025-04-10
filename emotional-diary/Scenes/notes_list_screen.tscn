@@ -1,0 +1,105 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhfi34x38em3k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4t2dy"]
+bg_color = Color(0.999999, 0.917671, 0.905997, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="notes_list_screen" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1000.0
+offset_bottom = 1500.0
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.063
+anchor_right = 0.963
+anchor_bottom = 0.173
+offset_left = 20.0
+offset_top = 1221.5
+offset_right = 22.9999
+offset_bottom = 1221.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_4t2dy")
+
+[node name="buttons" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.881
+anchor_right = 0.985
+anchor_bottom = 0.986
+offset_left = -10.0
+offset_top = 0.499878
+offset_right = -10.0001
+offset_bottom = -0.00012207
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 150
+columns = 3
+
+[node name="Button_diary" type="Button" parent="buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "  Diary  "
+
+[node name="Button_notes" type="Button" parent="buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "  Notes  "
+
+[node name="Button_stadistic" type="Button" parent="buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "  Stadistic  "
+
+[node name="Notes_list" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.018
+anchor_top = 0.173
+anchor_right = 0.959
+anchor_bottom = 0.87
+offset_left = 2.0
+offset_top = -0.5
+offset_right = 26.9999
+offset_bottom = -0.00012207
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.019
+anchor_right = 0.963
+anchor_bottom = 0.129
+offset_left = -6.0
+offset_top = 0.499998
+offset_right = 22.9999
+offset_bottom = 0.499985
+theme_override_styles/panel = SubResource("StyleBoxFlat_4t2dy")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.313
+anchor_top = 0.012
+anchor_right = 0.691
+anchor_bottom = 0.988
+offset_left = 0.344971
+offset_top = 0.02
+offset_right = -0.085022
+offset_bottom = -0.0200043
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Notas"
+horizontal_alignment = 1
+vertical_alignment = 1
