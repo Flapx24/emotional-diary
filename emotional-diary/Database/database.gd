@@ -48,11 +48,25 @@ func array_to_json(array):
 func add(element):
 	if element is Entry:
 		element.id=entries.back().id+1
+		element.timestamp = Time.get_unix_time_from_system()
 		entries.append(element)
 	elif element is Note:
 		element.id=notes.back().id+1
+		element.timestamp = Time.get_unix_time_from_system()
 		notes.append(element)
 	update_database()
+	
+func update_element(element):
+	if element is Entry:
+		var entry:Entry = Entry.find_by_id(element.id)
+		entry.text = element.text
+		entry.emotion = element.emotion
+		update_database()
+	elif element is Note:
+		var note:Note = Note.find_by_id(element.id)
+		note.text = element.text
+		note.timestamp = Time.get_unix_time_from_system()
+		update_database()
 		
 func remove(type,element_id:int) -> bool:
 	if type==Entry:
