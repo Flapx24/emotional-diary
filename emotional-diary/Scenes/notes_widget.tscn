@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://vavcoy5iylxn"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 0.8
+anchor_bottom = 0.027
+offset_left = 90.0
+offset_right = 90.0
+offset_bottom = 59.5
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.82606, 0.82606, 0.82606, 1)
+
+[node name="Container" type="Container" parent="."]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 100.0
+
+[node name="TextureRect" type="TextureRect" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_right = 624.0
+offset_bottom = 40.0
+
+[node name="content" type="Label" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 40.0
+offset_right = 624.0
+offset_bottom = 100.0

@@ -11,9 +11,19 @@ config_version=5
 [application]
 
 config/name="emotional-diary"
+run/main_scene="uid://cgtt221nbehrg"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+
+[display]
+
+window/size/viewport_width=1000
+window/size/viewport_height=1500
+window/size/mode=3
+window/stretch/mode="canvas_items"
 
 [autoload]
 
 Database="*res://Database/database.gd"
+
