@@ -11,7 +11,7 @@ enum Emotion {
 }
 
 var id: int
-var date: String
+var timestamp: int
 var emotion: Emotion
 var text: String
 
@@ -32,7 +32,12 @@ static func from_json(data: Dictionary) -> Entry:
 func to_json() -> Dictionary:
 	return {
 		"id": id,
-		"date": date,
+		"timestamp": timestamp,
 		"emotion": Emotion.keys()[emotion],
 		"text": text
 	}
+
+static func find_by_id(entry_id:int):
+	for entry in Database.entries:
+		if entry.id == entry_id:
+			return entry
