@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://vavcoy5iylxn"]
+[gd_scene load_steps=2 format=3 uid="uid://vavcoy5iylxn"]
+
+[ext_resource type="Texture2D" uid="uid://bh8hku38nlcbm" path="res://Assets/UI/PNG/Grey/Default/button_square_depth_flat.png" id="1_rjbq4"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -8,19 +10,29 @@ offset_left = 90.0
 offset_right = 90.0
 offset_bottom = 59.5
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="NinePatchRect" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.82606, 0.82606, 0.82606, 1)
+texture = ExtResource("1_rjbq4")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
 
 [node name="Container" type="Container" parent="."]
-layout_mode = 0
-offset_right = 150.0
-offset_bottom = 100.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.006
+anchor_top = 0.05
+anchor_right = 0.187
+anchor_bottom = 0.9
+offset_left = 0.2
+offset_right = 0.399994
 
 [node name="TextureRect" type="TextureRect" parent="Container"]
 layout_mode = 2
@@ -30,6 +42,7 @@ size_flags_vertical = 3
 [node name="title" type="Label" parent="."]
 layout_mode = 0
 offset_left = 150.0
+offset_top = 5.0
 offset_right = 624.0
 offset_bottom = 40.0
 
@@ -38,4 +51,4 @@ layout_mode = 0
 offset_left = 150.0
 offset_top = 40.0
 offset_right = 624.0
-offset_bottom = 100.0
+offset_bottom = 88.0
