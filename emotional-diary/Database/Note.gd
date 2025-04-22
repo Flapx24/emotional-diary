@@ -29,3 +29,8 @@ static func find_by_id(note_id:int):
 	for note in Database.notes:
 		if note.id == note_id:
 			return note
+
+static func get_notes_sorted_by_date() -> Array:
+	var sorted_notes = Database.notes.duplicate()
+	sorted_notes.sort_custom(func(a, b): return a.timestamp > b.timestamp)
+	return sorted_notes
