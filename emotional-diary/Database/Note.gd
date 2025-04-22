@@ -3,7 +3,7 @@ class_name Note
 extends Object
 
 var id: int
-var dateTime: String
+var timestamp: int
 var text: String
 
 func _init(id: int = 0, dateTime: String = "", text: String =""):
@@ -21,6 +21,16 @@ static func from_json(data: Dictionary) -> Note:
 func to_json() -> Dictionary:
 	return {
 		"id": id,
-		"dateTime": dateTime,
+		"timestamp": timestamp,
 		"text": text
 	}
+	
+static func find_by_id(note_id:int):
+	for note in Database.notes:
+		if note.id == note_id:
+			return note
+
+static func get_notes_sorted_by_date() -> Array:
+	var sorted_notes = Database.notes.duplicate()
+	sorted_notes.sort_custom(func(a, b): return a.timestamp > b.timestamp)
+	return sorted_notes

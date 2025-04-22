@@ -5,10 +5,6 @@ var notes:Array=[]
 
 func _ready():
 	_load_database()
-	print(entries)
-	print(notes)
-	add(Entry.new(0, "654654", Entry.Emotion.SAD, "Prueba"))
-	print(entries)
 
 func _load_database():
 	var file=FileAccess.open("res://database/database.json",FileAccess.READ)
@@ -48,16 +44,30 @@ func array_to_json(array):
 	for element in array:
 		json_array.append(element.to_json())
 	return json_array
-	
+
 func add(element):
 	if element is Entry:
 		element.id=entries.back().id+1
+		element.timestamp = Time.get_unix_time_from_system()
 		entries.append(element)
 	elif element is Note:
 		element.id=notes.back().id+1
+		element.timestamp = Time.get_unix_time_from_system()
 		notes.append(element)
 	update_database()
-
+	
+func update_element(element):
+	if element is Entry:
+		var entry:Entry = Entry.find_by_id(element.id)
+		entry.text = element.text
+		entry.emotion = element.emotion
+		update_database()
+	elif element is Note:
+		var note:Note = Note.find_by_id(element.id)
+		note.text = element.text
+		note.timestamp = Time.get_unix_time_from_system()
+		update_database()
+		
 func remove(type,element_id:int) -> bool:
 	if type==Entry:
 		return _remove_database_array_element_by_id(entries,element_id)
