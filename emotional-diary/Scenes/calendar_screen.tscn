@@ -1,13 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://cgtt221nbehrg"]
+[gd_scene load_steps=27 format=3 uid="uid://cgtt221nbehrg"]
 
 [ext_resource type="Script" uid="uid://dqnyktcqx1il8" path="res://Scripts/calendar_screen.gd" id="1_qeyi2"]
-[ext_resource type="Texture2D" uid="uid://jr8sbgtxosrj" path="res://Assets/UI/22.png" id="2_h2rjw"]
+[ext_resource type="Texture2D" uid="uid://cn4ufljjjyfsj" path="res://Assets/UI/PNG/Grey/Default/button_square_flat.png" id="2_ouk8m"]
+[ext_resource type="Texture2D" uid="uid://bkossoj1jjouh" path="res://Assets/UI/PNG/Blue/Default/button_rectangle_depth_line.png" id="3_2ty63"]
 [ext_resource type="FontFile" uid="uid://cklnct7lhakjq" path="res://Assets/Fonts/SometypeMono-VariableFont_wght.ttf" id="3_o84r2"]
 [ext_resource type="Texture2D" uid="uid://4xsh0er8yxty" path="res://Assets/UI/adult_1.png" id="4_qeyi2"]
 [ext_resource type="Texture2D" uid="uid://11ffwxeh8m7j" path="res://Assets/UI/left-arrow.png" id="5_ouk8m"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2rjw"]
-bg_color = Color(0.916257, 0.780379, 0.778467, 1)
+[ext_resource type="Texture2D" uid="uid://2tvgyxadwvkm" path="res://Assets/UI/PNG/Grey/Default/button_rectangle_depth_line.png" id="7_kqyb8"]
+[ext_resource type="Texture2D" uid="uid://uejmes1wn0yj" path="res://Assets/UI/PNG/Blue/Default/button_rectangle_gloss.png" id="8_l0red"]
+[ext_resource type="Texture2D" uid="uid://ne3oc7wyq52m" path="res://Assets/UI/PNG/Blue/Default/button_rectangle_flat.png" id="9_ernhi"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jfsak"]
 
@@ -31,8 +32,23 @@ bg_color = Color(0.916257, 0.780379, 0.778467, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r7adc"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o84r2"]
-bg_color = Color(0.917647, 0.780392, 0.780392, 0.819608)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_63oo7"]
+texture = ExtResource("8_l0red")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i4fre"]
+texture = ExtResource("9_ernhi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ugvw"]
+texture = ExtResource("8_l0red")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v3d81"]
+texture = ExtResource("9_ernhi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t5bmh"]
+texture = ExtResource("8_l0red")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sgjo8"]
+texture = ExtResource("9_ernhi")
 
 [node name="calendar_screen" type="Control"]
 layout_mode = 3
@@ -46,40 +62,51 @@ grow_vertical = 2
 size_flags_vertical = 3
 script = ExtResource("1_qeyi2")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.048
-anchor_top = 0.046
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -50.448
-offset_top = -72.358
-offset_right = 56.0
-offset_bottom = 70.0
+offset_left = 51.0
+offset_top = 73.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_h2rjw")
+texture = ExtResource("2_ouk8m")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
-[node name="Header" type="Panel" parent="."]
+[node name="Header" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.101808
-anchor_top = 0.151939
-anchor_right = 0.954329
-anchor_bottom = 0.225048
+anchor_left = 0.105614
+anchor_top = 0.103624
+anchor_right = 0.942912
+anchor_bottom = 0.213605
 grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_h2rjw")
+grow_vertical = 2
+texture = ExtResource("3_2ty63")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 5
+patch_margin_bottom = 7
 metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="Label" parent="Header"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0569196
-anchor_top = 0.226087
-anchor_right = 0.833705
-anchor_bottom = 0.756522
+anchor_left = 0.0477273
+anchor_top = 0.323699
+anchor_right = 0.880682
+anchor_bottom = 0.705202
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_o84r2")
 theme_override_font_sizes/font_size = 50
 text = "Elegir Entrada de Diario"
@@ -88,10 +115,10 @@ metadata/_edit_use_anchors_ = true
 [node name="TextureRect" type="TextureRect" parent="Header"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.863839
-anchor_top = 0.121739
-anchor_right = 0.967634
-anchor_bottom = 0.817391
+anchor_left = 0.870968
+anchor_top = 0.109827
+anchor_right = 0.974763
+anchor_bottom = 0.805479
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("4_qeyi2")
@@ -109,6 +136,8 @@ anchor_bottom = 0.267641
 offset_top = -3.05176e-05
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_o84r2")
 theme_override_font_sizes/font_size = 30
 text = "Selecciona una fecha:"
@@ -144,7 +173,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.997481, 0.79844, 1, 1)
+color = Color(0, 0.792157, 0.827451, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Calendar"]
 layout_mode = 1
@@ -312,49 +341,56 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 20
 text = "Sun"
 
-[node name="BottomNav" type="Panel" parent="."]
+[node name="BottonNav" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0666032
-anchor_top = 0.86014
-anchor_right = 0.980971
-anchor_bottom = 0.965671
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_o84r2")
-metadata/_edit_use_anchors_ = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BottomNav"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.0732636
+anchor_top = 0.899555
+anchor_right = 0.973263
+anchor_bottom = 0.966191
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
-alignment = 1
+texture = ExtResource("7_kqyb8")
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 9
+patch_margin_bottom = 13
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="BottomNav/HBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_o84r2")
-theme_override_font_sizes/font_size = 40
-text = "Diario"
+[node name="buttons" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.102759
+anchor_top = 0.909091
+anchor_right = 0.986759
+anchor_bottom = 0.955091
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 125
+columns = 3
+metadata/_edit_use_anchors_ = true
 
-[node name="Button2" type="Button" parent="BottomNav/HBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
+[node name="Button_diary" type="Button" parent="buttons"]
+texture_filter = 1
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_o84r2")
-theme_override_font_sizes/font_size = 40
-text = "Notas"
+theme_override_font_sizes/font_size = 50
+theme_override_styles/pressed = SubResource("StyleBoxTexture_63oo7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_i4fre")
+text = "  Diary  "
 
-[node name="Button3" type="Button" parent="BottomNav/HBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
+[node name="Button_notes" type="Button" parent="buttons"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_o84r2")
-theme_override_font_sizes/font_size = 35
-text = "Estadísticas"
+theme_override_font_sizes/font_size = 50
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1ugvw")
+theme_override_styles/normal = SubResource("StyleBoxTexture_v3d81")
+text = "  Notes  "
+
+[node name="Button_stadistic" type="Button" parent="buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/pressed = SubResource("StyleBoxTexture_t5bmh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_sgjo8")
+text = "  Stadistic  "
 
 [connection signal="pressed" from="Calendar/VBoxContainer/MarginContainer/TextureRect/previousMonthButton" to="." method="_on_previous_month_button_pressed"]
 [connection signal="pressed" from="Calendar/VBoxContainer/MarginContainer/TextureRect2/nextMonthButton" to="." method="_on_next_month_button_pressed"]

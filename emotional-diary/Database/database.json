@@ -2,60 +2,60 @@
 	"entries": [
 		{
 			"id": 0,
-			"date": "",
+			"timestamp": "1745068800",
 			"emotion": "HAPPY",
-			"text": ""
+			"text": "Hoy ha sido un día maravilloso. Me levanté con energía y optimismo tras una semana bastante complicada. Fui al parque por la mañana y el clima estaba perfecto, con un sol radiante que me llenó de vitalidad. Me encontré con algunos amigos por la tarde y cenamos en aquel restaurante italiano que tanto quería probar. Las pequeñas cosas de la vida realmente pueden cambiar nuestra perspectiva. Me siento agradecido y pleno."
 		},
 		{
 			"id": 1,
-			"date": "",
+			"timestamp": "1744982400",
 			"emotion": "HAPPY",
-			"text": ""
+			"text": "El proyecto en el que he estado trabajando finalmente dio sus frutos. Después de semanas de esfuerzo, recibí los comentarios del cliente y quedó encantado con los resultados. Esta sensación de logro es incomparable, especialmente porque tuve muchas dudas durante el proceso. También recibí una llamada de mi hermana con buenas noticias sobre su embarazo. Todo parece estar encajando perfectamente estos días."
 		},
 		{
 			"id": 2,
-			"date": "",
+			"timestamp": "1744896000",
 			"emotion": "HAPPY",
-			"text": ""
+			"text": "Hoy tomé la decisión de dedicar tiempo exclusivamente para mí. Practiqué meditación por la mañana, algo que había estado posponiendo mucho tiempo. La sensación de calma que experimenté fue reveladora. Luego preparé mi comida favorita y vi esa película que tenía pendiente desde hace meses. A veces olvidamos lo importante que es cuidar nuestra salud mental y darnos pequeños caprichos. Termino el día con una sensación de equilibrio y bienestar."
 		},
 		{
 			"id": 3,
-			"date": "",
+			"timestamp": "1744809600",
 			"emotion": "HAPPY",
-			"text": ""
+			"text": "Recibí una noticia inesperada hoy: me han ofrecido participar en un proyecto que siempre había soñado. No puedo creer la oportunidad que se me ha presentado. Lo más valioso fue compartir esto con mi familia y ver su reacción de orgullo y alegría. También resolví ese problema técnico que llevaba días atormentándome en el trabajo. Me siento capaz de enfrentar cualquier desafío en este momento. La perseverancia realmente da sus frutos."
 		},
 		{
 			"id": 4,
-			"date": "",
+			"timestamp": "1744723200",
 			"emotion": "HAPPY",
-			"text": ""
+			"text": "Esta mañana desperté con una claridad mental que no experimentaba desde hace tiempo. He estado reflexionando sobre mis objetivos personales y profesionales, y hoy finalmente pude trazar un plan concreto para alcanzarlos. También recibí un mensaje de un viejo amigo con quien había perdido contacto, y acordamos reunirnos pronto. Es sorprendente cómo algunas conexiones perduran a pesar del tiempo y la distancia. La vida está llena de pequeñas alegrías que debemos apreciar."
 		}
 	],
 	"notes": [
 		{
 			"id": 0,
-			"dateTime": "",
-			"text": ""
+			"timestamp": "1745109600",
+			"text": "Recoger el paquete de la oficina de correos antes de las 3pm."
 		},
 		{
 			"id": 1,
-			"dateTime": "",
-			"text": ""
+			"timestamp": "1745037000",
+			"text": "Llamar a mamá para confirmar la cena del domingo."
 		},
 		{
 			"id": 2,
-			"dateTime": "",
-			"text": ""
+			"timestamp": "1745000400",
+			"text": "Ideas para el proyecto: utilizar paleta de colores azul y verde."
 		},
 		{
 			"id": 3,
-			"dateTime": "",
-			"text": ""
+			"timestamp": "1744923600",
+			"text": "Reservar mesa en el restaurante italiano para 4 personas."
 		},
 		{
 			"id": 4,
-			"dateTime": "",
-			"text": ""
+			"timestamp": "1744831200",
+			"text": "Comprar ingredientes para la tarta de manzana."
 		}
 	]
 }
