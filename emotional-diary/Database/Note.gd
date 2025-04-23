@@ -29,3 +29,6 @@ static func get_notes_sorted_by_date() -> Array:
 	var sorted_notes = Database.notes.duplicate()
 	sorted_notes.sort_custom(func(a, b): return a.timestamp > b.timestamp)
 	return sorted_notes
+
+static func get_total_notes() -> int:
+	return Database.notes.size()

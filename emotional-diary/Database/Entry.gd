@@ -62,3 +62,17 @@ static func filter_by_date(start_date: String, end_date: String = "") -> Array:
 			filtered_entries.append(entry)
 	
 	return filtered_entries
+
+static func get_total_entries() -> int:
+	return Database.entries.size()
+
+static func count_entries_by_emotion() -> Dictionary:
+	var emotion_counts = {}
+	
+	for emotion in Emotion.keys():
+		emotion_counts[Emotion[emotion]] = 0
+
+	for entry in Database.entries:
+		emotion_counts[entry.emotion] += 1
+	
+	return emotion_counts
