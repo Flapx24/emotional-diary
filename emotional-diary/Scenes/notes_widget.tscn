@@ -4,11 +4,11 @@
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchor_right = 0.8
-anchor_bottom = 0.027
-offset_left = 90.0
-offset_right = 90.0
-offset_bottom = 59.5
+anchor_left = 0.09
+anchor_right = 0.89
+anchor_bottom = 0.067
+offset_right = -6.10352e-05
+offset_bottom = -0.5
 
 [node name="ColorRect" type="NinePatchRect" parent="."]
 texture_filter = 1
