@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://vavcoy5iylxn"]
+[gd_scene load_steps=3 format=3 uid="uid://vavcoy5iylxn"]
 
+[ext_resource type="Script" uid="uid://ydiel83rng31" path="res://Scripts/notes_widget.gd" id="1_44v2w"]
 [ext_resource type="Texture2D" uid="uid://bh8hku38nlcbm" path="res://Assets/UI/PNG/Grey/Default/button_square_depth_flat.png" id="1_rjbq4"]
 
 [node name="Control" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 0.89
 anchor_bottom = 0.067
 offset_right = -6.10352e-05
 offset_bottom = -0.5
+script = ExtResource("1_44v2w")
 
 [node name="ColorRect" type="NinePatchRect" parent="."]
 texture_filter = 1
@@ -40,15 +42,19 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="title" type="Label" parent="."]
-layout_mode = 0
-offset_left = 150.0
-offset_top = 5.0
-offset_right = 624.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.188
+anchor_top = 0.05
+anchor_right = 0.78
+anchor_bottom = 0.4
+offset_left = -0.399994
 
 [node name="content" type="Label" parent="."]
-layout_mode = 0
-offset_left = 150.0
-offset_top = 40.0
-offset_right = 624.0
-offset_bottom = 88.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.188
+anchor_top = 0.4
+anchor_right = 0.78
+anchor_bottom = 0.88
+offset_left = -0.399994

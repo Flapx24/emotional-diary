@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bhfi34x38em3k"]
+[gd_scene load_steps=13 format=3 uid="uid://bhfi34x38em3k"]
 
+[ext_resource type="Script" uid="uid://7cp4xi8sxury" path="res://Scripts/notes_list_screen.gd" id="1_i6m5e"]
 [ext_resource type="Texture2D" uid="uid://cn4ufljjjyfsj" path="res://Assets/UI/PNG/Grey/Default/button_square_flat.png" id="1_ihwlm"]
 [ext_resource type="Texture2D" uid="uid://2tvgyxadwvkm" path="res://Assets/UI/PNG/Grey/Default/button_rectangle_depth_line.png" id="2_i6m5e"]
 [ext_resource type="Texture2D" uid="uid://uejmes1wn0yj" path="res://Assets/UI/PNG/Blue/Default/button_rectangle_gloss.png" id="3_tm3p6"]
@@ -31,6 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_i6m5e")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 texture_filter = 1
@@ -111,6 +113,7 @@ anchor_right = 0.98
 anchor_bottom = 0.87
 offset_top = -0.5
 offset_bottom = -0.00012207
+theme_override_constants/v_separation = 50
 
 [node name="Panel" type="NinePatchRect" parent="."]
 texture_filter = 1
@@ -149,3 +152,6 @@ theme_override_font_sizes/font_size = 40
 text = "Notas"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="buttons/Button_diary" to="." method="_on_button_diary_pressed"]
+[connection signal="pressed" from="buttons/Button_stadistic" to="." method="_on_button_stadistic_pressed"]
