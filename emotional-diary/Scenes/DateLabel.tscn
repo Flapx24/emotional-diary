@@ -2,6 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cwhen7qbijsug" path="res://Scripts/date_label.gd" id="1_buwpv"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4udk"]
+bg_color = Color(0.615426, 0.604718, 0.84945, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jfsak"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_buwpv"]
@@ -24,13 +31,6 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r7adc"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4udk"]
-bg_color = Color(0.615426, 0.604718, 0.84945, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
 [node name="DateLabel" type="MarginContainer"]
 custom_minimum_size = Vector2(100, 50)
 anchors_preset = -1
@@ -41,7 +41,16 @@ offset_bottom = -50.0
 script = ExtResource("1_buwpv")
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_c4udk")
+
+[node name="Button" type="Button" parent="PanelContainer"]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jfsak")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_buwpv")
@@ -55,21 +64,16 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_0kahw")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_cbu2j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_r7adc")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_c4udk")
-
-[node name="Label" type="Label" parent="PanelContainer"]
+[node name="Label" type="Label" parent="PanelContainer/Button"]
 unique_name_in_owner = true
 layout_mode = 2
+anchor_top = 0.26
+anchor_right = 1.0
+anchor_bottom = 0.72
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "12"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PanelContainer/Button" to="." method="_on_button_pressed"]
