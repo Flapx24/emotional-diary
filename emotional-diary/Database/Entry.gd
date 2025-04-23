@@ -15,16 +15,16 @@ var timestamp: int
 var emotion: Emotion
 var text: String
 
-func _init(id: int = 0, date: String = "", emotion: Emotion = Emotion.HAPPY, text: String = ""):
+func _init(id: int = 0, timestamp: int = 0, emotion: Emotion = Emotion.HAPPY, text: String = ""):
 	self.id = id
-	self.date = date
+	self.timestamp = timestamp
 	self.emotion = emotion
 	self.text = text
 
 static func from_json(data: Dictionary) -> Entry:
 	return Entry.new(
 		data["id"],
-		data["date"],
+		int(data["timestamp"]),
 		Emotion[data["emotion"].to_upper()],
 		data["text"]
 	)
@@ -36,11 +36,6 @@ func to_json() -> Dictionary:
 		"emotion": Emotion.keys()[emotion],
 		"text": text
 	}
-
-static func find_by_id(entry_id:int):
-	for entry in Database.entries:
-		if entry.id == entry_id:
-			return entry
 			
 static func filter_by_emotion(emotion_type: Emotion) -> Array:
 	var filtered_entries = []
@@ -67,3 +62,17 @@ static func filter_by_date(start_date: String, end_date: String = "") -> Array:
 			filtered_entries.append(entry)
 	
 	return filtered_entries
+
+static func get_total_entries() -> int:
+	return Database.entries.size()
+
+static func count_entries_by_emotion() -> Dictionary:
+	var emotion_counts = {}
+	
+	for emotion in Emotion.keys():
+		emotion_counts[Emotion[emotion]] = 0
+
+	for entry in Database.entries:
+		emotion_counts[entry.emotion] += 1
+	
+	return emotion_counts
