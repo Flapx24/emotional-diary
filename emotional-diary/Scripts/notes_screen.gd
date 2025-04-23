@@ -10,7 +10,7 @@ func _on_button_save_pressed() -> void:
 	
 	if title != "" and content != "":
 		var newNote = Note.new()
-		newNote.text = "Título: %s\n\n%s" % [title, content]
+		newNote.text = "%s\n\n%s" % [title, content]
 		db.add(newNote)
 		noteTitle.text = ""
 		noteContent.text = ""

@@ -33,19 +33,19 @@ patch_margin_bottom = 5
 [node name="title" type="Label" parent="NinePatchRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0257038
-anchor_top = 0.048951
-anchor_right = 0.902081
-anchor_bottom = 0.398601
+anchor_left = 0.00969697
+anchor_top = 0.0481928
+anchor_right = 0.901818
+anchor_bottom = 0.39759
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="content" type="Label" parent="NinePatchRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0379437
-anchor_top = 0.486014
-anchor_right = 0.859241
-anchor_bottom = 0.888112
+anchor_left = 0.0157576
+anchor_top = 0.48494
+anchor_right = 0.859394
+anchor_bottom = 0.885542
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
