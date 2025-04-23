@@ -25,7 +25,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r7adc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4udk"]
-bg_color = Color(0.619608, 0.6, 0.862745, 1)
+bg_color = Color(0.615426, 0.604718, 0.84945, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -33,7 +33,13 @@ corner_radius_bottom_left = 20
 
 [node name="DateLabel" type="MarginContainer"]
 custom_minimum_size = Vector2(100, 50)
+anchors_preset = -1
+anchor_right = 0.1
+anchor_bottom = 0.0333333
+offset_right = -100.0
+offset_bottom = -50.0
 script = ExtResource("1_buwpv")
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
@@ -61,6 +67,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_c4udk")
 [node name="Label" type="Label" parent="PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "12"
 horizontal_alignment = 1
 

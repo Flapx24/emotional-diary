@@ -1,0 +1,138 @@
+[gd_scene load_steps=12 format=3 uid="uid://dhf67dkw3f63j"]
+
+[ext_resource type="Texture2D" uid="uid://cn4ufljjjyfsj" path="res://Assets/UI/PNG/Grey/Default/button_square_flat.png" id="1_x5mx1"]
+[ext_resource type="Texture2D" uid="uid://2tvgyxadwvkm" path="res://Assets/UI/PNG/Grey/Default/button_rectangle_depth_line.png" id="2_n0vlv"]
+[ext_resource type="Texture2D" uid="uid://uejmes1wn0yj" path="res://Assets/UI/PNG/Blue/Default/button_rectangle_gloss.png" id="3_fhk5i"]
+[ext_resource type="Texture2D" uid="uid://ne3oc7wyq52m" path="res://Assets/UI/PNG/Blue/Default/button_rectangle_flat.png" id="4_jau5r"]
+[ext_resource type="Texture2D" uid="uid://bkossoj1jjouh" path="res://Assets/UI/PNG/Blue/Default/button_rectangle_depth_line.png" id="5_ubjbj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yj0l6"]
+texture = ExtResource("3_fhk5i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iab51"]
+texture = ExtResource("4_jau5r")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4u4eh"]
+texture = ExtResource("3_fhk5i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v8vxu"]
+texture = ExtResource("4_jau5r")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_37rf5"]
+texture = ExtResource("3_fhk5i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_drpce"]
+texture = ExtResource("4_jau5r")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x5mx1")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="button_down" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.905
+anchor_right = 0.95
+anchor_bottom = 0.971
+offset_top = -0.5
+offset_right = -6.10352e-05
+offset_bottom = 0.499878
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_n0vlv")
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 9
+patch_margin_bottom = 13
+
+[node name="buttons" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.058
+anchor_top = 0.914
+anchor_right = 0.942
+anchor_bottom = 0.96
+offset_right = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 125
+columns = 3
+
+[node name="Button_diary" type="Button" parent="buttons"]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yj0l6")
+theme_override_styles/normal = SubResource("StyleBoxTexture_iab51")
+text = "  Diary  "
+
+[node name="Button_notes" type="Button" parent="buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4u4eh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_v8vxu")
+text = "  Notes  "
+
+[node name="Button_stadistic" type="Button" parent="buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/pressed = SubResource("StyleBoxTexture_37rf5")
+theme_override_styles/normal = SubResource("StyleBoxTexture_drpce")
+text = "  Stadistic  "
+
+[node name="Panel" type="NinePatchRect" parent="."]
+texture_filter = 1
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.019
+anchor_right = 0.986
+anchor_bottom = 0.129
+offset_left = -6.0
+offset_top = 0.499998
+offset_right = -0.000183105
+offset_bottom = 0.499954
+texture = ExtResource("5_ubjbj")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 4
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.313
+anchor_top = 0.012
+anchor_right = 0.691
+anchor_bottom = 0.988
+offset_left = 0.344971
+offset_top = 0.02
+offset_right = -0.085022
+offset_bottom = -0.0200043
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Estadisticas"
+horizontal_alignment = 1
+vertical_alignment = 1
