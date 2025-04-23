@@ -20,11 +20,10 @@ func _read_json(json):
 	entries=_read_json_array(json["entries"], Entry)
 	notes=_read_json_array(json["notes"], Note)
 
-func _read_json_array(json,type):
-	var array=[]
+func _read_json_array(json, type):
+	var array = []
 	for element in json:
-		array.append(type.new())
-		array.back().from_json(element)
+		array.append(type.from_json(element))
 	return array
 
 func update_database():
@@ -56,17 +55,31 @@ func add(element):
 		notes.append(element)
 	update_database()
 	
+func find_by_id(type, element_id: int):
+	var array = []
+	if type == Entry:
+		array = entries
+	elif type == Note:
+		array = notes
+	
+	for element in array:
+		if element.id == element_id:
+			return element
+	return null
+	
 func update_element(element):
 	if element is Entry:
-		var entry:Entry = Entry.find_by_id(element.id)
-		entry.text = element.text
-		entry.emotion = element.emotion
-		update_database()
+		var entry = find_by_id(Entry, element.id)
+		if entry:
+			entry.text = element.text
+			entry.emotion = element.emotion
+			update_database()
 	elif element is Note:
-		var note:Note = Note.find_by_id(element.id)
-		note.text = element.text
-		note.timestamp = Time.get_unix_time_from_system()
-		update_database()
+		var note = find_by_id(Note, element.id)
+		if note:
+			note.text = element.text
+			note.timestamp = Time.get_unix_time_from_system()
+			update_database()
 		
 func remove(type,element_id:int) -> bool:
 	if type==Entry:
