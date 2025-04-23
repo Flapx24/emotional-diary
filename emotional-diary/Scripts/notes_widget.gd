@@ -1,20 +1,23 @@
 extends Control
 
-@onready var title = $title
-@onready var content = $content
+@onready var title_label = $NinePatchRect/title
+@onready var content_label = $NinePatchRect/content
 
-func noteText(note: String) -> void:
-	var elements = note.split("\n")
-
-	if elements.size() > 0:
-		title.text = elements[0].replace("Título: ", "")
-	else:
-		title.text = "Sin título"
-
+func set_note_text(note: String) -> void:
+	if not title_label or not content_label:
+		return
+	
+	var clean_note = note.strip_edges()
+	if clean_note.is_empty():
+		title_label.text = "Nota vacía"
+		content_label.text = ""
+		return
+	
+	var elements = clean_note.split("\n", false)
+	
+	title_label.text = elements[0].replace("Título: ", "").strip_edges()
+	
 	if elements.size() > 1:
-		var content_text = ""
-		for i in range(1, elements.size()):
-			content_text += elements[i] + "\n"
-		content.text = content_text.strip_edges() 
+		content_label.text = "\n".join(elements.slice(1)).strip_edges()
 	else:
-		content.text = "Sin contenido"
+		content_label.text = "Sin contenido más detalles"

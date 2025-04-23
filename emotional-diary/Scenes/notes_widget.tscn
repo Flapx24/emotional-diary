@@ -7,17 +7,21 @@
 layout_mode = 3
 anchor_left = 0.09
 anchor_right = 0.89
-anchor_bottom = 0.067
-offset_right = -6.10352e-05
+anchor_bottom = 0.215
+offset_right = 16.0
 offset_bottom = -0.5
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_44v2w")
 
-[node name="ColorRect" type="NinePatchRect" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 9.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_rjbq4")
@@ -26,35 +30,22 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="Container" type="Container" parent="."]
+[node name="title" type="Label" parent="NinePatchRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.006
-anchor_top = 0.05
-anchor_right = 0.187
-anchor_bottom = 0.9
-offset_left = 0.2
-offset_right = 0.399994
+anchor_left = 0.0257038
+anchor_top = 0.048951
+anchor_right = 0.902081
+anchor_bottom = 0.398601
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Container"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="title" type="Label" parent="."]
+[node name="content" type="Label" parent="NinePatchRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.188
-anchor_top = 0.05
-anchor_right = 0.78
-anchor_bottom = 0.4
-offset_left = -0.399994
-
-[node name="content" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.188
-anchor_top = 0.4
-anchor_right = 0.78
-anchor_bottom = 0.88
-offset_left = -0.399994
+anchor_left = 0.0379437
+anchor_top = 0.486014
+anchor_right = 0.859241
+anchor_bottom = 0.888112
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true

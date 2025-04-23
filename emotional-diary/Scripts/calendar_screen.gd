@@ -97,3 +97,10 @@ func _on_add_button_pressed():
 		return
 
 	get_tree().change_scene_to_file("res://Scenes/notes_screen.tscn")
+
+func _on_button_notes_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/notes_list_screen.tscn")
+
+
+func _on_button_stadistic_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/charts_view.tscn")
