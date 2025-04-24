@@ -7,6 +7,7 @@ func _ready() -> void:
 	show_notes()
 	
 func show_notes():
+	# Limpiar contenedor primero
 	for child in notes_container.get_children():
 		child.queue_free()
 	
@@ -14,15 +15,21 @@ func show_notes():
 	for note in all_notes:
 		var widget = widget_note.instantiate()
 		notes_container.add_child(widget)
+		
+		# Esperar para asegurar carga
 		await get_tree().process_frame
-		widget.set_note_text(note.text)
+		
+		# Pasar todos los datos de la nota
+		widget.set_note_data({
+			"text": note.text,
+			"timestamp": note.timestamp
+		})
 
 func _on_button_diary_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/calendar_screen.tscn")
 
 func _on_button_stadistic_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/charts_view.tscn")
-
 
 func _on_button_notes_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/notes_screen.tscn")

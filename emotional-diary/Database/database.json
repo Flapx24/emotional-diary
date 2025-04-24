@@ -35,42 +35,32 @@
 		{
 			"id": 0,
 			"timestamp": 1745109600,
-			"text": "Recoger el paquete de la oficina de correos antes de las 3pm."
+			"text": "Recoger\n\nRecoger el paquete de la oficina de correos antes de las 3pm."
 		},
 		{
 			"id": 1,
 			"timestamp": 1745037000,
-			"text": "Llamar a mamá para confirmar la cena del domingo."
+			"text": "LLamar\n\nLlamar a mamá para confirmar la cena del domingo."
 		},
 		{
 			"id": 2,
 			"timestamp": 1745000400,
-			"text": "Ideas para el proyecto: utilizar paleta de colores azul y verde."
+			"text": "Ideas\n\nIdeas para el proyecto: utilizar paleta de colores azul y verde."
 		},
 		{
 			"id": 3,
 			"timestamp": 1744923600,
-			"text": "Reservar mesa en el restaurante italiano para 4 personas."
+			"text": "Reserva\n\nReservar mesa en el restaurante italiano para 4 personas."
 		},
 		{
 			"id": 4,
 			"timestamp": 1744831200,
-			"text": "Comprar ingredientes para la tarta de manzana."
+			"text": "Compra\n\nComprar ingredientes para la tarta de manzana."
 		},
 		{
 			"id": 5,
-			"timestamp": 1745396453,
-			"text": "Título: olaaaaa\n\nprueba"
-		},
-		{
-			"id": 6,
-			"timestamp": 1745404148,
-			"text": "Título: kjajsjdjdsjsdajj\n\njfjgjjaja"
-		},
-		{
-			"id": 7,
-			"timestamp": 1745406630,
-			"text": "Título: fsfsssfffffkkfkff\n\nfssfskksfs"
+			"timestamp": 1745480722,
+			"text": "Comprar pizzas para cenar en casa de Juan\n\nCena"
 		}
 	]
 }

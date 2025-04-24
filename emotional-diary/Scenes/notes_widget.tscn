@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://vavcoy5iylxn"]
+[gd_scene load_steps=4 format=3 uid="uid://vavcoy5iylxn"]
 
 [ext_resource type="Script" uid="uid://ydiel83rng31" path="res://Scripts/notes_widget.gd" id="1_44v2w"]
 [ext_resource type="Texture2D" uid="uid://bh8hku38nlcbm" path="res://Assets/UI/PNG/Grey/Default/button_square_depth_flat.png" id="1_rjbq4"]
+[ext_resource type="FontFile" uid="uid://cklnct7lhakjq" path="res://Assets/Fonts/SometypeMono-VariableFont_wght.ttf" id="3_yecdd"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -33,19 +34,39 @@ patch_margin_bottom = 5
 [node name="title" type="Label" parent="NinePatchRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.00969697
-anchor_top = 0.0481928
-anchor_right = 0.901818
-anchor_bottom = 0.39759
+anchor_left = 0.0327273
+anchor_top = 0.0843373
+anchor_right = 0.573333
+anchor_bottom = 0.216867
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_yecdd")
+theme_override_font_sizes/font_size = 18
 metadata/_edit_use_anchors_ = true
 
 [node name="content" type="Label" parent="NinePatchRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0157576
-anchor_top = 0.48494
-anchor_right = 0.859394
-anchor_bottom = 0.885542
+anchor_left = 0.0484848
+anchor_top = 0.46988
+anchor_right = 0.892121
+anchor_bottom = 0.870482
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_yecdd")
+theme_override_font_sizes/font_size = 22
+metadata/_edit_use_anchors_ = true
+
+[node name="date" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.793939
+anchor_top = 0.0421687
+anchor_right = 1.07152
+anchor_bottom = 0.228916
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_yecdd")
+theme_override_font_sizes/font_size = 30
 metadata/_edit_use_anchors_ = true
