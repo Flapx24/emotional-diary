@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhf67dkw3f63j"]
+[gd_scene load_steps=13 format=3 uid="uid://dhf67dkw3f63j"]
 
+[ext_resource type="Script" uid="uid://ckldu65frs56t" path="res://Scripts/charts_view.gd" id="1_n0vlv"]
 [ext_resource type="Texture2D" uid="uid://cn4ufljjjyfsj" path="res://Assets/UI/PNG/Grey/Default/button_square_flat.png" id="1_x5mx1"]
 [ext_resource type="Texture2D" uid="uid://2tvgyxadwvkm" path="res://Assets/UI/PNG/Grey/Default/button_rectangle_depth_line.png" id="2_n0vlv"]
 [ext_resource type="Texture2D" uid="uid://uejmes1wn0yj" path="res://Assets/UI/PNG/Blue/Default/button_rectangle_gloss.png" id="3_fhk5i"]
@@ -31,6 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_n0vlv")
 
 [node name="ColorRect" type="NinePatchRect" parent="."]
 texture_filter = 1
@@ -136,3 +138,6 @@ theme_override_font_sizes/font_size = 40
 text = "Estadisticas"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="buttons/Button_diary" to="." method="_on_button_diary_pressed"]
+[connection signal="pressed" from="buttons/Button_notes" to="." method="_on_button_notes_pressed"]

@@ -16,3 +16,7 @@ func _on_button_save_pressed() -> void:
 		noteContent.text = ""
 	else:
 		print("El título y el contenido no pueden estar vacíos.")
+
+
+func _on_button_cancel_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/calendar_screen.tscn")

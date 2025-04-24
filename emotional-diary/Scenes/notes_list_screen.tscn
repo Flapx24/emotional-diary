@@ -154,4 +154,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="buttons/Button_diary" to="." method="_on_button_diary_pressed"]
+[connection signal="pressed" from="buttons/Button_notes" to="." method="_on_button_notes_pressed"]
 [connection signal="pressed" from="buttons/Button_stadistic" to="." method="_on_button_stadistic_pressed"]

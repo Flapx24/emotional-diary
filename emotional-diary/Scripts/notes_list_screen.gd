@@ -22,3 +22,7 @@ func _on_button_diary_pressed() -> void:
 
 func _on_button_stadistic_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/charts_view.tscn")
+
+
+func _on_button_notes_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/notes_screen.tscn")
