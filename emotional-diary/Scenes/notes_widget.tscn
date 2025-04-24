@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bh8hku38nlcbm" path="res://Assets/UI/PNG/Grey/Default/button_square_depth_flat.png" id="1_rjbq4"]
 [ext_resource type="FontFile" uid="uid://cklnct7lhakjq" path="res://Assets/Fonts/SometypeMono-VariableFont_wght.ttf" id="3_yecdd"]
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchor_left = 0.09
 anchor_right = 0.89

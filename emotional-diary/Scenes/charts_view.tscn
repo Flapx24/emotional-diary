@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhf67dkw3f63j"]
+[gd_scene load_steps=16 format=3 uid="uid://dhf67dkw3f63j"]
 
 [ext_resource type="Script" uid="uid://ckldu65frs56t" path="res://Scripts/charts_view.gd" id="1_n0vlv"]
 [ext_resource type="Texture2D" uid="uid://cn4ufljjjyfsj" path="res://Assets/UI/PNG/Grey/Default/button_square_flat.png" id="1_x5mx1"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://uejmes1wn0yj" path="res://Assets/UI/PNG/Blue/Default/button_rectangle_gloss.png" id="3_fhk5i"]
 [ext_resource type="Texture2D" uid="uid://ne3oc7wyq52m" path="res://Assets/UI/PNG/Blue/Default/button_rectangle_flat.png" id="4_jau5r"]
 [ext_resource type="Texture2D" uid="uid://bkossoj1jjouh" path="res://Assets/UI/PNG/Blue/Default/button_rectangle_depth_line.png" id="5_ubjbj"]
+[ext_resource type="Texture2D" uid="uid://cwk6v2oxh0u5e" path="res://Assets/UI/PNG/Blue/Default/arrow_decorative_e_small.png" id="7_jau5r"]
+[ext_resource type="FontFile" uid="uid://cklnct7lhakjq" path="res://Assets/Fonts/SometypeMono-VariableFont_wght.ttf" id="8_ubjbj"]
+[ext_resource type="Script" uid="uid://bk015ck6s6dty" path="res://Scripts/charts.gd" id="9_ubjbj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yj0l6"]
 texture = ExtResource("3_fhk5i")
@@ -138,6 +141,99 @@ theme_override_font_sizes/font_size = 40
 text = "Estadisticas"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 300.0
+offset_right = 925.0
+offset_bottom = 452.0
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("7_jau5r")
+expand_mode = 2
+
+[node name="Notes" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_ubjbj")
+theme_override_font_sizes/font_size = 40
+text = "Notas:"
+vertical_alignment = 1
+
+[node name="NotesCount" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_ubjbj")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("7_jau5r")
+expand_mode = 2
+
+[node name="emotions" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_ubjbj")
+theme_override_font_sizes/font_size = 40
+text = "Emociones:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="emotionsCount" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_ubjbj")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChartsContainer" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 63.0
+offset_top = 496.0
+offset_right = 928.0
+offset_bottom = 789.0
+
+[node name="Control" type="Control" parent="ChartsContainer"]
+layout_mode = 1
+anchor_right = 0.34
+anchor_bottom = 1.0
+offset_right = -0.100006
+grow_vertical = 2
+script = ExtResource("9_ubjbj")
+
+[node name="numNotes" type="Label" parent="ChartsContainer"]
+layout_mode = 0
+anchor_left = 0.107514
+anchor_top = 0.993655
+anchor_right = 0.216185
+anchor_bottom = 1.03807
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="numEmotions" type="Label" parent="ChartsContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.231214
+anchor_top = 0.993174
+anchor_right = 0.339884
+anchor_bottom = 1.11263
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="buttons/Button_diary" to="." method="_on_button_diary_pressed"]
 [connection signal="pressed" from="buttons/Button_notes" to="." method="_on_button_notes_pressed"]
