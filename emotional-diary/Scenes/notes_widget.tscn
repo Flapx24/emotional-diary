@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://vavcoy5iylxn"]
+
+[ext_resource type="Script" uid="uid://ydiel83rng31" path="res://Scripts/notes_widget.gd" id="1_44v2w"]
+[ext_resource type="Texture2D" uid="uid://bh8hku38nlcbm" path="res://Assets/UI/PNG/Grey/Default/button_square_depth_flat.png" id="1_rjbq4"]
+[ext_resource type="FontFile" uid="uid://cklnct7lhakjq" path="res://Assets/Fonts/SometypeMono-VariableFont_wght.ttf" id="3_yecdd"]
+
+[node name="Control2" type="Control"]
+layout_mode = 3
+anchor_left = 0.09
+anchor_right = 0.89
+anchor_bottom = 0.215
+offset_right = 16.0
+offset_bottom = -0.5
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_44v2w")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 9.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rjbq4")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="title" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0327273
+anchor_top = 0.0843373
+anchor_right = 0.573333
+anchor_bottom = 0.216867
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_yecdd")
+theme_override_font_sizes/font_size = 18
+metadata/_edit_use_anchors_ = true
+
+[node name="content" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0484848
+anchor_top = 0.46988
+anchor_right = 0.892121
+anchor_bottom = 0.870482
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_yecdd")
+theme_override_font_sizes/font_size = 22
+metadata/_edit_use_anchors_ = true
+
+[node name="date" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.793939
+anchor_top = 0.0421687
+anchor_right = 1.07152
+anchor_bottom = 0.228916
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_yecdd")
+theme_override_font_sizes/font_size = 30
+metadata/_edit_use_anchors_ = true

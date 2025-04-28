@@ -1,0 +1,158 @@
+[gd_scene load_steps=13 format=3 uid="uid://bhfi34x38em3k"]
+
+[ext_resource type="Script" uid="uid://7cp4xi8sxury" path="res://Scripts/notes_list_screen.gd" id="1_i6m5e"]
+[ext_resource type="Texture2D" uid="uid://cn4ufljjjyfsj" path="res://Assets/UI/PNG/Grey/Default/button_square_flat.png" id="1_ihwlm"]
+[ext_resource type="Texture2D" uid="uid://2tvgyxadwvkm" path="res://Assets/UI/PNG/Grey/Default/button_rectangle_depth_line.png" id="2_i6m5e"]
+[ext_resource type="Texture2D" uid="uid://uejmes1wn0yj" path="res://Assets/UI/PNG/Blue/Default/button_rectangle_gloss.png" id="3_tm3p6"]
+[ext_resource type="Texture2D" uid="uid://ne3oc7wyq52m" path="res://Assets/UI/PNG/Blue/Default/button_rectangle_flat.png" id="4_acach"]
+[ext_resource type="Texture2D" uid="uid://bkossoj1jjouh" path="res://Assets/UI/PNG/Blue/Default/button_rectangle_depth_line.png" id="5_g3fp4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pbrat"]
+texture = ExtResource("3_tm3p6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bl6ec"]
+texture = ExtResource("4_acach")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f5rfm"]
+texture = ExtResource("3_tm3p6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a0q36"]
+texture = ExtResource("4_acach")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gdga3"]
+texture = ExtResource("3_tm3p6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_14ovl"]
+texture = ExtResource("4_acach")
+
+[node name="notes_list_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i6m5e")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ihwlm")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="button_down" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.905
+anchor_right = 0.95
+anchor_bottom = 0.971
+offset_top = -0.5
+offset_right = -6.10352e-05
+offset_bottom = 0.499878
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i6m5e")
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 9
+patch_margin_bottom = 13
+
+[node name="buttons" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.058
+anchor_top = 0.914
+anchor_right = 0.942
+anchor_bottom = 0.96
+offset_right = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 125
+columns = 3
+
+[node name="Button_diary" type="Button" parent="buttons"]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pbrat")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bl6ec")
+text = "  Diary  "
+
+[node name="Button_notes" type="Button" parent="buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f5rfm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_a0q36")
+text = "  Notes  "
+
+[node name="Button_stadistic" type="Button" parent="buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gdga3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_14ovl")
+text = "  Stadistic  "
+
+[node name="Notes_list" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.171
+anchor_right = 0.98
+anchor_bottom = 0.87
+offset_top = -0.5
+offset_bottom = -0.00012207
+theme_override_constants/v_separation = 50
+
+[node name="Panel" type="NinePatchRect" parent="."]
+texture_filter = 1
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.019
+anchor_right = 0.986
+anchor_bottom = 0.129
+offset_left = -6.0
+offset_top = 0.499998
+offset_right = -0.000183105
+offset_bottom = 0.499954
+texture = ExtResource("5_g3fp4")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 4
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.313
+anchor_top = 0.012
+anchor_right = 0.691
+anchor_bottom = 0.988
+offset_left = 0.344971
+offset_top = 0.02
+offset_right = -0.085022
+offset_bottom = -0.0200043
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Notas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="buttons/Button_diary" to="." method="_on_button_diary_pressed"]
+[connection signal="pressed" from="buttons/Button_notes" to="." method="_on_button_notes_pressed"]
+[connection signal="pressed" from="buttons/Button_stadistic" to="." method="_on_button_stadistic_pressed"]
